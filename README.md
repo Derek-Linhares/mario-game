@@ -13,7 +13,7 @@ Welcome to the Mario vs Piranha Plant Game repository! This simple yet exciting 
 
 
 ## Demo
-[See the game in action!](#) (https://mario-game-lemon.vercel.app/)
+[See the game in action!](#){:target="_blank"} (https://mario-game-lemon.vercel.app/)
 ## Features
 - Mario character controlled by arrow keys or on-screen controls.
 - Animated Piranha Plants as obstacles.

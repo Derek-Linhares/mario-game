@@ -1,0 +1,649 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mario-position: 0;
+  /* Valor padrão, pode ser substituído pelo JavaScript */
+}
+
+/* Estilos globais */
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/* Estilos para a seção principal (container) */
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./assets/fundo\ 222.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 900px;
+  min-height: 900px;
+}
+
+.final {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  background-color: black;
+  visibility: visible;
+  margin-top: 50px;
+  background-image: url(./assets/fundoFinal.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 3s, opacity 8s ease-in-out;
+}
+
+#loadingScreen {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  background-color: black;
+  visibility: visible;
+  margin-top: 50px;
+  z-index: 9999;
+  color: white;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#loadingBar {
+  width: 50%;
+  height: 20px;
+}
+
+.final.mostrar {
+  visibility: visible;
+  opacity: 1;
+}
+
+#space {
+  font-family: sans-serif;
+  font-weight: bolder;
+  color: blue;
+  font-size: 20px;
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+  transform: rotate(35deg);
+  text-align: center;
+  cursor: default;
+}
+
+#collect {
+  font-family: sans-serif;
+  font-weight: bolder;
+  color: blue;
+  font-size: 20px;
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  transform: rotate(-35deg);
+  text-align: center;
+  cursor: default;
+}
+
+.black {
+  margin-top: 50px;
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  background-color: black;
+  visibility: hidden;
+}
+
+#reiniciar2 {
+  position: absolute;
+  width: 250px;
+  right: 330px;
+  bottom: 30px;
+}
+
+#reiniciar2:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+#marioFinal {
+  background-image: url(./assets/mario2.gif);
+  background-size: cover;
+  width: 215px;
+  height: 215px;
+  position: absolute;
+  bottom: 97px;
+  right: 340px;
+}
+
+#confetti {
+  background-image: url(./assets/confetti.gif);
+  background-size: cover;
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+}
+
+#toad1 {
+  background-image: url(./assets/toad.gif);
+  background-size: cover;
+  width: 150px;
+  height: 180px;
+  position: absolute;
+  bottom: 97px;
+  right: 650px;
+}
+
+#congrats {
+  background-image: url(./assets/congrats.png);
+  background-size: cover;
+  width: 800px;
+  height: 200px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
+#you {
+  background-image: url(./assets/you.png);
+  background-size: cover;
+  width: 300px;
+  height: 30px;
+  position: absolute;
+  top: 250px;
+  right: 300px;
+}
+
+#defeated {
+  background-image: url(./assets/defeated.png);
+  background-size: cover;
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  top: 350px;
+  right: 250px;
+}
+
+#yoshi {
+  background-image: url(https://64.media.tumblr.com/ffdc08baf0036e22b28a9f8cd82af027/3b5d0ec8eae36845-09/s400x600/459c628ca3ad1575eeee2fed808b2c6aac5045a0.gifv);
+  background-size: cover;
+  width: 220px;
+  height: 270px;
+  position: absolute;
+  bottom: 95px;
+  right: 80px;
+}
+
+.tela {
+  margin-top: 50px;
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  background-image: url(./assets/1671511.jpg);
+  background-position: center;
+  background-size: cover;
+  visibility: visible;
+}
+
+/* Estilos para o cenário */
+.cenario {
+  width: 900px;
+  height: 900px;
+  margin-top: 50px;
+  background: linear-gradient(to bottom, #90e8fe 0%, rgb(91, 206, 255) 100%);
+  position: relative;
+  /* Apenas uma posição deve ser usada, não precisa duplicar */
+  overflow: hidden;
+}
+
+/* Estilos para o personagem Mario */
+.mario {
+  position: absolute;
+  bottom: 120px;
+  width: 200px;
+  height: 200px;
+  left: -20px;
+}
+
+.canosDerrotados {
+  width: 180px;
+  height: 80px;
+  margin-top: -4px;
+}
+
+/* Estilos para a tela de game over */
+.gameoverscreen {
+  margin-top: 50px;
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.gameoverimg {
+  animation: blink 1.8s infinite ease-in-out;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.pontuacao {
+  margin-top: 10px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  gap: 10px;
+  color: white;
+}
+
+.score {
+  font-size: 40px;
+  color: white;
+  margin-right: 5px;
+  font-weight: bolder;
+}
+
+.x {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: 20px;
+}
+
+.pipeScore {
+  width: 30px;
+  height: 30px;
+  margin-top: 15px;
+}
+
+#finalScore {
+  text-align: center;
+  font-size: 55px;
+  margin-top: -10px;
+  margin-left: 18px;
+  color: white;
+}
+
+.pontos {
+  width: 500px;
+  height: 100px;
+}
+
+/* Estilos para a animação de salto */
+.jump {
+  animation: jump-animation 1s ease-out;
+}
+
+@keyframes jump-animation {
+  0% {
+    bottom: 120px;
+  }
+
+  50% {
+    bottom: 320px;
+  }
+
+  100% {
+    bottom: 120px;
+  }
+}
+
+/* Estilos para a tela inicial */
+
+#mountains {
+  position: absolute;
+  width: 2310px;
+  height: 410px;
+  bottom: 120px;
+  background-image: url(./assets/bg-mountains\\(1\).png);
+  background-size: cover;
+}
+
+.titulo {
+  width: 500px;
+  height: 200px;
+}
+
+.subtitulo {
+  width: 400px;
+  height: 80px;
+  margin-bottom: 410px;
+}
+
+/* Estilos para o botão da tela inicial */
+.botao {
+  margin-top: 20px;
+  color: azure;
+  background-color: transparent;
+  width: 200px;
+  height: 50px;
+  border: none;
+
+  cursor: pointer;
+  font-size: 30px;
+  animation: botaoanim 1s infinite linear;
+}
+
+#iniciar {
+  position: absolute;
+  width: 300px;
+  bottom: 0px;
+  left: -50px;
+}
+
+.end {
+  width: 500px;
+  height: 100px;
+  margin-top: 100px;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  position: absolute;
+  bottom: 150px;
+  right: 210px;
+  opacity: 1;
+  animation: botaoanim2 3.1s linear 4s;
+}
+
+#reiniciar {
+  width: 250px;
+}
+
+.end:hover {
+  transform: scale(1.2);
+}
+
+@keyframes botaoanim2 {
+  0% {
+    opacity: 1;
+    position: absolute;
+    bottom: 1500px;
+  }
+
+  50% {
+    opacity: 1;
+    position: absolute;
+    bottom: 1000px;
+  }
+
+  100% {
+    opacity: 1;
+    position: absolute;
+    bottom: 150px;
+  }
+}
+
+@keyframes botaoanim {
+  0% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.2;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+/* Estilos para a animação de morte do personagem */
+.morreu {
+  animation: endGame 4s ease-out;
+}
+
+@keyframes endGame {
+  0% {
+    bottom: var(--mario-position);
+  }
+
+  18% {
+    bottom: var(--mario-position);
+  }
+
+  40% {
+    bottom: 680px;
+  }
+
+  100% {
+    bottom: -500px;
+  }
+}
+
+/* Estilos para as nuvens */
+.clouds {
+  width: 600px;
+  height: 300px;
+  position: absolute;
+  animation: cloud-animation 45s infinite linear;
+}
+
+/* Estilos para o fundo em loop */
+.background {
+  width: 1800px;
+  height: 120px;
+  background-image: url(./assets/fundo\ mario.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  position: absolute;
+  bottom: 0;
+  animation: background-loop 8.87s linear infinite;
+}
+
+@keyframes background-loop {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: -4000px;
+    /* Largura da imagem */
+  }
+}
+
+/* Estilos para os piranhaPlant */
+.plant {
+  position: absolute;
+  width: 130px;
+  height: 150px;
+  bottom: 120px;
+  animation: pipe-animation 3.05s infinite linear;
+}
+
+#coin {
+  margin-left: -500px;
+  position: absolute;
+  bottom: 310px;
+  width: 50px;
+  height: 50px;
+  margin-top: -50px;
+
+  animation: coin-animation 4s infinite linear;
+}
+
+@keyframes pipe-animation {
+  from {
+    right: -200px;
+  }
+
+  to {
+    right: 130%;
+  }
+}
+
+@keyframes coin-animation {
+  from {
+    right: -500px;
+  }
+
+  to {
+    right: 130%;
+  }
+}
+
+/* Estilos para a animação das nuvens */
+@keyframes cloud-animation {
+  from {
+    right: -600px;
+  }
+
+  to {
+    right: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    zoom: 0.4;
+
+    background-image: url(./assets/fundo\ 222.jpg);
+  }
+
+  .container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Resolução entre 768px e 1023px */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  body {
+    zoom: 0.5;
+
+    background-image: url(./assets/fundo\ 222.jpg);
+  }
+
+  .container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Resolução 1024x768 */
+@media screen and (min-width: 1024px) and (max-height: 768px) {
+  body {
+    zoom: 0.6;
+
+    background-image: url(./assets/fundo\ 222.jpg);
+  }
+
+  .container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Resolução 1366x768 */
+@media screen and (min-width: 1366px) and (max-height: 768px) {
+  body {
+    zoom: 0.7;
+
+    background-image: url(./assets/fundo\ 222.jpg);
+  }
+
+  .container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Resolução 1600x900 */
+@media screen and (min-width: 1600px) and (max-height: 900px) {
+  body {
+    zoom: 0.8;
+
+    background-image: url(./assets/fundo\ 222.jpg);
+  }
+
+  .container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+/* Resolução 1920x1080 */
+@media screen and (min-width: 1920px) and (max-height: 1080px) {
+  body {
+    zoom: 0.9;
+
+    background-image: url(./assets/fundo\ 222.jpg);
+  }
+
+  .container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Resolução 2560x1440 */
+@media screen and (min-width: 2560px) and (max-height: 1440px) {
+  body {
+    zoom: 1;
+
+    background-image: url(./assets/fundo\ 222.jpg);
+  }
+
+  .container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Resolução 3840x2160 */
+@media screen and (min-width: 3840px) and (max-height: 2160px) {
+  body {
+    zoom: 2;
+
+    background-image: url(./assets/fundo\ 222.jpg);
+  }
+
+  .container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}

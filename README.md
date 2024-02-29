@@ -16,6 +16,8 @@ Welcome to the Mario vs Piranha Plant Game repository! This simple yet exciting 
 - Mario character controlled by arrow keys or on-screen controls.
 - Animated Piranha Plants as obstacles.
 - Coin collection system with a win condition.
+- Sounds and Music
+
 
 ## How to Play
 1. Use the "arrow up key", "Spacebar key", "W key" or touchscreen on mobile devices to control Mario's jump:

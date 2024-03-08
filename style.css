@@ -536,7 +536,6 @@ body {
 @media only screen and (max-width: 767px) {
   body {
     zoom: 0.4;
-
     background-image: url(./assets/fundo\ 222.jpg);
   }
 
@@ -551,7 +550,6 @@ body {
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   body {
     zoom: 0.5;
-
     background-image: url(./assets/fundo\ 222.jpg);
   }
 
@@ -563,10 +561,9 @@ body {
 }
 
 /* Resolução 1024x768 */
-@media screen and (min-width: 1024px) and (max-height: 768px) {
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
   body {
     zoom: 0.6;
-
     background-image: url(./assets/fundo\ 222.jpg);
   }
 
@@ -574,17 +571,13 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-  }
-  .score {
-    margin-top: 50px;
   }
 }
 
 /* Resolução 1366x768 */
-@media screen and (min-width: 1366px) and (max-height: 768px) {
+@media screen and (min-width: 1281px) and (max-width: 1366px) {
   body {
     zoom: 0.7;
-
     background-image: url(./assets/fundo\ 222.jpg);
   }
 
@@ -592,17 +585,13 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-  }
-  .score {
-    margin-top: 50px;
   }
 }
 
 /* Resolução 1600x900 */
-@media screen and (min-width: 1600px) and (max-height: 900px) {
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
   body {
     zoom: 0.8;
-
     background-image: url(./assets/fundo\ 222.jpg);
   }
 
@@ -610,16 +599,13 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-  }
-  .score {
-    margin-top: 50px;
   }
 }
+
 /* Resolução 1920x1080 */
-@media screen and (min-width: 1920px) and (max-height: 1080px) {
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
   body {
     zoom: 0.9;
-
     background-image: url(./assets/fundo\ 222.jpg);
   }
 
@@ -627,17 +613,13 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-  }
-  .score {
-    margin-top: 50px;
   }
 }
 
 /* Resolução 2560x1440 */
-@media screen and (min-width: 2560px) and (max-height: 1440px) {
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
   body {
     zoom: 1;
-
     background-image: url(./assets/fundo\ 222.jpg);
   }
 
@@ -649,10 +631,9 @@ body {
 }
 
 /* Resolução 3840x2160 */
-@media screen and (min-width: 3840px) and (max-height: 2160px) {
+@media screen and (min-width: 2561px) and (max-width: 3840px) {
   body {
     zoom: 2;
-
     background-image: url(./assets/fundo\ 222.jpg);
   }
 

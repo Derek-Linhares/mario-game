@@ -228,7 +228,7 @@ body {
 .canosDerrotados {
   width: 180px;
   height: 80px;
-  margin-top: 5px;
+  margin-top: -2px;
 }
 
 /* Estilos para a tela de game over */
@@ -292,13 +292,13 @@ body {
 .pipeScore {
   width: 30px;
   height: 30px;
-  margin-top: 0px;
+  margin-top: 8px;
 }
 
 #finalScore {
   text-align: center;
   font-size: 55px;
-  
+
   margin-left: 18px;
   color: white;
 }
@@ -535,7 +535,7 @@ body {
 
 @media only screen and (max-width: 767px) {
   body {
-    zoom: 0.4;
+    zoom: 0.46;
     background-image: url(./assets/fundo\ 222.jpg);
   }
 
@@ -544,26 +544,12 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
-
+  
+  
 }
 
 /* Resolução entre 768px e 1023px */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  body {
-    zoom: 0.45;
-    background-image: url(./assets/fundo\ 222.jpg);
-  }
-
-  .container {
-    position: absolute;
-    height: 99.9%;
-    width: 99.9%;
-  }
-
-}
-
-/* Resolução 1024x768 */
-@media screen and (min-width: 1024px) and (max-width: 1280px) {
   body {
     zoom: 0.5;
     background-image: url(./assets/fundo\ 222.jpg);
@@ -574,11 +560,16 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
-
+  .pipeScore {
+    margin-top: 15px;
+  }
+  .canosDerrotados {
+    margin-top: 8px;
+  }
 }
 
-/* Resolução 1366x768 */
-@media screen and (min-width: 1281px) and (max-width: 1366px) {
+/* Resolução 1024x768 */
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
   body {
     zoom: 0.55;
     background-image: url(./assets/fundo\ 222.jpg);
@@ -589,13 +580,18 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
-
+  .pipeScore {
+    margin-top: 15px;
+  }
+  .canosDerrotados {
+    margin-top: 8px;
+  }
 }
 
-/* Resolução 1600x900 */
-@media screen and (min-width: 1367px) and (max-width: 1600px) {
+/* Resolução 1366x768 */
+@media screen and (min-width: 1281px) and (max-width: 1366px) {
   body {
-    zoom: 0.65;
+    zoom: 0.6;
     background-image: url(./assets/fundo\ 222.jpg);
   }
 
@@ -604,10 +600,16 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
- 
+  .pipeScore {
+    margin-top: 15px;
+  }
+  .canosDerrotados {
+    margin-top: 8px;
+  }
+}
 
-/* Resolução 1920x1080 */
-@media screen and (min-width: 1601px) and (max-width: 1920px) {
+/* Resolução 1600x900 */
+@media screen and (min-width: 1367px) and (max-width: 1600px) {
   body {
     zoom: 0.7;
     background-image: url(./assets/fundo\ 222.jpg);
@@ -618,7 +620,32 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
+  .pipeScore {
+    margin-top: 15px;
+  }
+  .canosDerrotados {
+    margin-top: 8px;
+  }
+}
 
+/* Resolução 1920x1080 */
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+  body {
+    zoom:0.75;
+    background-image: url(./assets/fundo\ 222.jpg);
+  }
+
+  .container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .pipeScore {
+    margin-top: 10px;
+  }
+  .canosDerrotados {
+    margin-top: 0;
+  }
 }
 
 /* Resolução 2560x1440 */
@@ -630,10 +657,15 @@ body {
 
   .container {
     position: absolute;
-    height: 100%;
-    width: 100%;
+    height: 99.9%;
+    width: 99.9%;
   }
-}
+  .pipeScore {
+    margin-top: 15px;
+  }
+  .canosDerrotados {
+    margin-top: 4px;
+  }
 
 /* Resolução 3840x2160 */
 @media screen and (min-width: 2561px) and (max-width: 3840px) {
@@ -646,5 +678,11 @@ body {
     position: absolute;
     height: 99.9%;
     width: 99.9%;
+  }
+  .pipeScore {
+    margin-top: 15px;
+  }
+  .canosDerrotados {
+    margin-top: 8px;
   }
 }

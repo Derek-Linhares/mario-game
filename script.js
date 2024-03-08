@@ -217,7 +217,7 @@ const startGameLoop = () => {
 
       playSound(somcoin);
 
-      if (score === 1) {
+      if (score === 5) {
         pauseAnimations();
         isGameOver = true;
         stopSound(tema);

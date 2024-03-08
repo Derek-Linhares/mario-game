@@ -544,6 +544,9 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
+  .score {
+    margin-top: 50px;
+  }
 }
 
 /* Resolução entre 768px e 1023px */
@@ -557,6 +560,9 @@ body {
     position: absolute;
     height: 99.9%;
     width: 99.9%;
+  }
+  .score {
+    margin-top: 50px;
   }
 }
 
@@ -572,6 +578,9 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
+  .score {
+    margin-top: 50px;
+  }
 }
 
 /* Resolução 1366x768 */
@@ -585,6 +594,9 @@ body {
     position: absolute;
     height: 99.9%;
     width: 99.9%;
+  }
+  .score {
+    margin-top: 50px;
   }
 }
 
@@ -600,6 +612,9 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
+  .score {
+    margin-top: 50px;
+  }
 }
 
 /* Resolução 1920x1080 */
@@ -614,8 +629,8 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
-  .pontuacao {
-    margin-top: 15px;
+  .score {
+    margin-top: 50px;
   }
 }
 

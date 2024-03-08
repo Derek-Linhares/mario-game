@@ -535,7 +535,7 @@ body {
 
 @media only screen and (max-width: 767px) {
   body {
-    zoom: 0.35;
+    zoom: 0.4;
     background-image: url(./assets/fundo\ 222.jpg);
   }
 
@@ -550,7 +550,7 @@ body {
 /* Resolução entre 768px e 1023px */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   body {
-    zoom: 0.4;
+    zoom: 0.45;
     background-image: url(./assets/fundo\ 222.jpg);
   }
 
@@ -595,7 +595,7 @@ body {
 /* Resolução 1600x900 */
 @media screen and (min-width: 1367px) and (max-width: 1600px) {
   body {
-    zoom: 0.68;
+    zoom: 0.65;
     background-image: url(./assets/fundo\ 222.jpg);
   }
 
@@ -609,7 +609,7 @@ body {
 /* Resolução 1920x1080 */
 @media screen and (min-width: 1601px) and (max-width: 1920px) {
   body {
-    zoom: 0.75;
+    zoom: 0.7;
     background-image: url(./assets/fundo\ 222.jpg);
   }
 

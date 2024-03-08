@@ -4,13 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const resourcesToPreload = [
     // Adicione mais imagens conforme necessário
     // Adicione mais áudios conforme necessário
-    
+
     "./assets/040e0b2cc40d677fe5af0a805cbedbd7.png",
     "./assets/1671511.jpg",
     "./assets/bg-mountains (1).png",
     "./assets/clouds.png",
     "./assets/coin.gif",
     "./assets/coinSound.mp3",
+    "./assets/its-me.mp3",
+    "./assets/yoshi-voice.mp3",
+    "./assets/toad-voice.mp3",
     "./assets/confetti.gif",
     "./assets/congrats.png",
     "./assets/defeated.png",
@@ -34,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "./assets/titulo.png",
     "./assets/toad.gif",
     "./assets/you.png",
-    "./assets/fundo mario.png"
+    "./assets/fundo mario.png",
   ];
 
   let loadedResources = 0;
@@ -94,7 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Restante do seu código...
 
-
 // Função para mostrar a tela de carregamento
 function showLoadingScreen() {
   const loadingScreen = document.getElementById("loadingScreen");
@@ -107,13 +109,6 @@ function hideLoadingScreen() {
   loadingScreen.style.visibility = "hidden";
 }
 
-
-
-
-
-
-
-
 // Seleção de elementos na tela e variáveis de estado do jogo
 const tema = document.getElementById("tema");
 const plant = document.querySelector(".plant");
@@ -122,6 +117,9 @@ const clouds = document.querySelector(".clouds");
 const final = document.querySelector(".final");
 const black = document.querySelector(".black");
 const pulo = document.getElementById("pulo");
+const yoshiVoice = document.getElementById("yoshi-voice");
+const marioVoice = document.getElementById("mario-voice");
+const toadVoice = document.getElementById("toad-voice");
 const cenario = document.querySelector("cenario");
 const tela = document.querySelector("tela");
 const scoreElement = document.querySelector(".score");
@@ -134,7 +132,7 @@ let hasScored = false;
 let isGameOver = false;
 let isJumping = false;
 let posicaoMario = 0;
-let canTouch = false
+let canTouch = false;
 
 // Elementos adicionais
 let end = document.querySelector(".end");
@@ -175,9 +173,9 @@ const resumeAnimations = () => {
 
 // Esconde todas as telas (inicial, game over etc.)
 const hideScreens = () => {
-  const screens = document.getElementsByClassName("tela");
+  const screens = document.getElementsByClassName("tela", "gameoverscreen");
   for (const screen of screens) {
-    screen.style.visibility = "hidden";
+    screen.style.display = "none";
   }
 };
 
@@ -219,7 +217,7 @@ const startGameLoop = () => {
 
       playSound(somcoin);
 
-      if (score === 5) {
+      if (score === 1) {
         pauseAnimations();
         isGameOver = true;
         stopSound(tema);
@@ -278,16 +276,22 @@ const startGameLoop = () => {
   let canJump = true;
 
   document.addEventListener("keydown", (event) => {
-    if ((event.code === "Space" || event.code === "KeyW" || event.code === "ArrowUp") && !isJumping && canJump) {
+    if (
+      (event.code === "Space" ||
+        event.code === "KeyW" ||
+        event.code === "ArrowUp") &&
+      !isJumping &&
+      canJump
+    ) {
       jump();
       isJumping = true;
       canJump = false;
-  
+
       if (isFirstJump) {
         isFirstJump = false;
         hasScored = false;
       }
-  
+
       setTimeout(() => {
         isJumping = false;
         canJump = true;
@@ -313,8 +317,6 @@ document.addEventListener("touchstart", () => {
     }, 900);
   }
 });
-
-
 
 // Função para exibir a tela de game over
 const gameOver = (finalScore) => {
@@ -344,5 +346,5 @@ const gameStart = () => {
   hideScreens();
   resumeAnimations();
   startGameLoop();
-  canTouch = true
+  canTouch = true;
 };

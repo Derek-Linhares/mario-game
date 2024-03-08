@@ -1,100 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Botanical Brawl</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="icon" type="image/png" href="./assets/mario ico.ico" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botanical Brawl</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" type="image/png" href="./assets/mario ico.ico">
-
-</head>
-
-<body onselectstart="return false;">
-        
+    <body onselectstart="return false;">
         <div class="container">
             <div id="loadingScreen">
                 <progress id="loadingBar" value="0" max="100"></progress>
                 Carregando...
-              </div>
-            
+            </div>
+
             <div class="fundo"></div>
-          
+
             <div class="cenario">
                 <div id="mountains"></div>
                 <div class="pontuacao">
-                    <img src="./assets/coin.gif" alt="" class="pipeScore">
+                    <img src="./assets/coin.gif" alt class="pipeScore" />
                     <div class="score">0</div>
                 </div>
-                
 
                 <div class="background"></div>
-                
-                <img src="./assets/coin.gif" alt="" id="coin">
-                <div><img src="./assets/plant.gif" class="plant" alt="plant"></div>
-                <div><img src="./assets/mario.gif" class="mario" alt="Mario"></div>
-                <div><img src="./assets/clouds.png" class="clouds" alt="Nuvens"></div>
+
+                <img src="./assets/coin.gif" alt id="coin" />
+                <div><img src="./assets/plant.gif" class="plant"
+                        alt="plant" /></div>
+                <div><img src="./assets/mario.gif" class="mario"
+                        alt="Mario" /></div>
+                <div><img src="./assets/clouds.png" class="clouds"
+                        alt="Nuvens" /></div>
             </div>
-
-
-           
 
             <div class="tela">
-                
-                <img src="./assets/titulo.png" class="titulo" alt="Título">
-                <img src="./assets/PIPES-27-07-2023 (2).png" class="subtitulo" alt="Subtítulo">
-                <p id="space">PRESS SPACEBAR <br> TO JUMP...</p>
-                <p id="collect">COLLECT 5 COINS <br> TO WIN!!!</p>
+                <img src="./assets/titulo.png" class="titulo" alt="Título" />
+                <img
+                    src="./assets/PIPES-27-07-2023 (2).png"
+                    class="subtitulo"
+                    alt="Subtítulo" />
+                <p id="space">
+                    PRESS SPACEBAR <br />
+                    TO JUMP...
+                </p>
+                <p id="collect">
+                    COLLECT 5 COINS <br />
+                    TO WIN!!!
+                </p>
                 <button class="botao" onclick="gameStart()">
-                    <img src="./assets/iniciar-28-07-2023.png" id="iniciar" alt>
+                    <img src="./assets/iniciar-28-07-2023.png" id="iniciar"
+                        alt />
                 </button>
             </div>
-           
 
             <div class="black"></div>
             <div class="final">
-                
-                <div id="marioFinal"></div>
-                <div id="toad1"></div>
+                <div id="confetti"></div>
+
+                <div id="marioFinal" onclick="playSound(marioVoice)"></div>
+                <div id="toad1" onclick="playSound(toadVoice)"></div>
                 <div id="toad2"></div>
-                <div id="yoshi"></div>
+                <div id="yoshi" onclick="playSound(yoshiVoice)"></div>
                 <div id="congrats"></div>
                 <div id="you"></div>
                 <div id="defeated"></div>
-                <div id="confetti"></div>
+
                 <button class="end2" onclick="window.location.reload()">
-                    <img src="./assets/tela-Inicial-28-07-2023.png" id="reiniciar2">
+                    <img src="./assets/tela-Inicial-28-07-2023.png"
+                        id="reiniciar2" />
                 </button>
-
-
             </div>
-            
 
             <div class="gameoverscreen">
-                <img src="./assets/Game-Over-27-07-2023.png" class="gameoverimg" alt="Tela de Game Over">
+                <img
+                    src="./assets/Game-Over-27-07-2023.png"
+                    class="gameoverimg"
+                    alt="Tela de Game Over" />
                 <div class="pontuacao">
-                    <img src="./assets/Score-27-07-2023.png" class="canosDerrotados" alt="Pontuação">
-                    
+                    <img
+                        src="./assets/Score-27-07-2023.png"
+                        class="canosDerrotados"
+                        alt="Pontuação" />
+
                     <span id="finalScore" class="score">0</span>
                 </div>
                 <button class="end" onclick="window.location.reload()">
-                    <img src="./assets/tela-Inicial-28-07-2023.png" id="reiniciar">
+                    <img src="./assets/tela-Inicial-28-07-2023.png"
+                        id="reiniciar" />
                 </button>
             </div>
         </div>
-        
 
-    <audio src="./assets/Super Mario World Music - Athletic (320 kbps).mp3" id="tema"></audio>
-    <audio src="./assets/Fsound.mp3" id="gameover"></audio>
-   
-    <audio src="./assets/Super Mario World Music - Game Over (320 kbps).mp3" id="over"></audio>
-    <audio src="./assets/pulo.mp3" id="pulo"></audio>
-    
-    <audio src="./assets/coinSound.mp3" id="somcoin"></audio>
-    <audio src="./assets/FinalSound.mp3" id="party"></audio>
-    <audio src="./assets/letsGo.mp3" id="lets"></audio>
+        <audio
+            src="./assets/Super Mario World Music - Athletic (320 kbps).mp3"
+            id="tema"></audio>
+        <audio src="./assets/Fsound.mp3" id="gameover"></audio>
 
-    <script src="./script.js"></script>
-</body>
+        <audio
+            src="./assets/Super Mario World Music - Game Over (320 kbps).mp3"
+            id="over"></audio>
+        <audio src="./assets/pulo.mp3" id="pulo"></audio>
 
+        <audio src="./assets/coinSound.mp3" id="somcoin"></audio>
+        <audio src="./assets/FinalSound.mp3" id="party"></audio>
+        <audio src="./assets/letsGo.mp3" id="lets"></audio>
+        <audio src="./assets/its-me.mp3" id="mario-voice"></audio>
+        <audio src="./assets/toad-voice.mp3" id="toad-voice"></audio>
+        <audio src="./assets/yoshi-voice.mp3" id="yoshi-voice"></audio>
+
+        <script src="./script.js"></script>
+    </body>
 </html>

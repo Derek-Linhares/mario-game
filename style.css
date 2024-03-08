@@ -614,6 +614,9 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
+  .pontuacao {
+    margin-top: 15px;
+  }
 }
 
 /* Resolução 2560x1440 */

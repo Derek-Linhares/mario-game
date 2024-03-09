@@ -70,8 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const progress = (loadedResources / totalResources) * 100;
     updateLoadingBar(progress);
 
-    console.log(`Recurso carregado: ${loadedResources} de ${totalResources}`);
-
     if (loadedResources === totalResources) {
       hideLoadingScreen();
     }
@@ -133,6 +131,7 @@ let isGameOver = false;
 let isJumping = false;
 let posicaoMario = 0;
 let canTouch = false;
+let canClick = false;
 
 // Elementos adicionais
 let end = document.querySelector(".end");
@@ -299,17 +298,21 @@ const startGameLoop = () => {
     }
   });
 
-  document.addEventListener("keyup", (event) => {
-    if (event.code === "Space") {
-      isJumping = false;
-    }
-  });
-
   playSound(tema);
 };
 
 document.addEventListener("touchstart", () => {
   if (!isJumping && canTouch) {
+    jump();
+    isJumping = true;
+    setTimeout(() => {
+      isJumping = false;
+    }, 900);
+  }
+});
+
+document.addEventListener("mousedown", () => {
+  if (!isJumping && canClick) {
     jump();
     isJumping = true;
     setTimeout(() => {
@@ -347,4 +350,7 @@ const gameStart = () => {
   resumeAnimations();
   startGameLoop();
   canTouch = true;
+  setTimeout(() => {
+    canClick = true;
+  }, 100);
 };

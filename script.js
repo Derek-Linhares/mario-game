@@ -1,10 +1,9 @@
+// Function Loading Game Assets
+
 document.addEventListener("DOMContentLoaded", function () {
   showLoadingScreen();
 
   const resourcesToPreload = [
-    // Adicione mais imagens conforme necessário
-    // Adicione mais áudios conforme necessário
-
     "./assets/040e0b2cc40d677fe5af0a805cbedbd7.png",
     "./assets/1671511.jpg",
     "./assets/bg-mountains (1).png",
@@ -93,95 +92,90 @@ document.addEventListener("DOMContentLoaded", function () {
   preloadResources();
 });
 
-// Restante do seu código...
-
-// Função para mostrar a tela de carregamento
+// Function to show the loading screen
 function showLoadingScreen() {
   const loadingScreen = document.getElementById("loadingScreen");
   loadingScreen.style.visibility = "visible";
 }
 
-// Função para esconder a tela de carregamento
+// Function to hide the loading screen
 function hideLoadingScreen() {
   const loadingScreen = document.getElementById("loadingScreen");
   loadingScreen.style.visibility = "hidden";
 }
 
-// Seleção de elementos na tela e variáveis de estado do jogo
-const tema = document.getElementById("tema");
+// Selection of on-screen elements and game state variables
+const theme = document.getElementById("theme");
 const plant = document.querySelector(".plant");
 const background = document.querySelector(".background");
 const clouds = document.querySelector(".clouds");
 const final = document.querySelector(".final");
 const black = document.querySelector(".black");
-const pulo = document.getElementById("pulo");
+const jumping = document.getElementById("jumping");
 const yoshiVoice = document.getElementById("yoshi-voice");
 const marioVoice = document.getElementById("mario-voice");
 const toadVoice = document.getElementById("toad-voice");
-const cenario = document.querySelector("cenario");
-const tela = document.querySelector("tela");
+const scene = document.querySelector("scene");
 const scoreElement = document.querySelector(".score");
 const gameoverscreen = document.querySelector(".gameoverscreen");
 const over = document.getElementById("over");
-
 let gameLoop;
 let score = 0;
 let hasScored = false;
 let isGameOver = false;
 let isJumping = false;
-let posicaoMario = 0;
 let canTouch = false;
 let canClick = false;
 
-// Elementos adicionais
+// Additional elements
 let end = document.querySelector(".end");
-let mountains = document.getElementById("mountains");
+
 let coin = document.getElementById("coin");
 
 let party = document.getElementById("party");
-let somcoin = document.getElementById("somcoin");
+let coinSound = document.getElementById("coinSound");
 let lets = document.getElementById("lets");
 
-// Função para reproduzir um som
+// Function to play sound
 const playSound = (audio) => {
   audio.currentTime = 0;
   audio.play();
   audio.volume = 0.9;
 };
 
-// Função para parar a reprodução de um som
+// Function to stop sound
 const stopSound = (audio) => {
   audio.currentTime = 0;
   audio.pause();
 };
 
-// Pausa as animações da tela
+// Pause screen animations
 const pauseAnimations = () => {
   end.style.animationPlayState = "paused";
-  [plant, background, clouds, mountains, coin].forEach((element) => {
+  [plant, background, clouds, coin].forEach((element) => {
     element.style.animationPlayState = "paused";
   });
 };
 
-// Continua as animações da tela
+// Continue screen animations
 const resumeAnimations = () => {
-  [plant, background, clouds, mountains, coin].forEach((element) => {
+  [plant, background, clouds, coin].forEach((element) => {
     element.style.animationPlayState = "running";
   });
 };
 
-// Esconde todas as telas (inicial, game over etc.)
+// Hides all screens (home, game over, etc.)
 const hideScreens = () => {
-  const screens = document.getElementsByClassName("tela", "gameoverscreen");
+  const screens = document.getElementsByClassName("screen", "gameoverscreen");
   for (const screen of screens) {
     screen.style.display = "none";
   }
 };
 
-// Função para realizar o salto do personagem
+// Function to perform the character's jump
 const jump = () => {
   if (isGameOver) return;
-  playSound(pulo);
+  playSound(jumping);
   const mario = document.querySelector(".mario");
   mario.classList.add("jump");
   setTimeout(() => {
@@ -191,11 +185,10 @@ const jump = () => {
 };
 pauseAnimations();
 
-// Inicia o loop principal do jogo
+// Starts the main game loop
 const startGameLoop = () => {
   const mario = document.querySelector(".mario");
   let isFirstJump = true;
-
   gameLoop = setInterval(() => {
     const plantPosition = plant.offsetLeft;
     const coinPosition = coin.offsetLeft;
@@ -214,19 +207,19 @@ const startGameLoop = () => {
       hasScored = true;
       scoreElement.innerText = score;
 
-      playSound(somcoin);
+      playSound(coinSound);
 
       if (score === 5) {
         pauseAnimations();
         isGameOver = true;
-        stopSound(tema);
-        stopSound(pulo);
-        stopSound(somcoin);
+        stopSound(theme);
+        stopSound(jumping);
+        stopSound(coinSound);
         playSound(lets);
         hideScreens();
 
         black.style.visibility = "visible";
-        final.classList.add("mostrar");
+        final.classList.add("show");
 
         setTimeout(() => {
           playSound(party);
@@ -237,7 +230,7 @@ const startGameLoop = () => {
       coin.style.visibility = "visible";
       hasScored = false;
     }
-    // Verifica se houve colisão com o cano
+    // Check if there was a collision with the pipe
     if (plantPosition <= 108 && plantPosition > 0 && marioPosition < 260) {
       isGameOver = true;
       pauseAnimations();
@@ -258,7 +251,7 @@ const startGameLoop = () => {
       mario.style.width = "60px";
       mario.style.marginLeft = "60px";
 
-      [tema, pulo, somcoin].forEach(stopSound);
+      [theme, jumping, coinSound].forEach(stopSound);
       const gameover = document.getElementById("gameover");
 
       playSound(gameover);
@@ -269,7 +262,7 @@ const startGameLoop = () => {
       gameOver(score);
     }
 
-    // Reinicia a variável hasScored quando o cano passa pelo personagem
+    // Reset the hasScored variable when the pipe passes the character
   }, 10);
 
   let canJump = true;
@@ -298,7 +291,7 @@ const startGameLoop = () => {
     }
   });
 
-  playSound(tema);
+  playSound(theme);
 };
 
 document.addEventListener("touchstart", () => {
@@ -321,7 +314,7 @@ document.addEventListener("mousedown", () => {
   }
 });
 
-// Função para exibir a tela de game over
+// Function to display the game over screen
 const gameOver = (finalScore) => {
   isGameOver = true;
   clearInterval(gameLoop);
@@ -342,7 +335,7 @@ const gameOver = (finalScore) => {
   }, 4000);
 };
 
-// Função para iniciar o jogo
+// Function to start the game
 const gameStart = () => {
   end.classList.remove("animate");
   end.style.visibility = "hidden";

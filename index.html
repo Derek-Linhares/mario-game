@@ -12,15 +12,13 @@
         <div class="container">
             <div id="loadingScreen">
                 <progress id="loadingBar" value="0" max="100"></progress>
-                Carregando...
+                Loading...
             </div>
 
-            <div class="fundo"></div>
+            <div class="scene">
 
-            <div class="cenario">
-                <div id="mountains"></div>
-                <div class="pontuacao">
-                    <img src="./assets/coin.gif" alt class="pipeScore" />
+                <div class="scoreboard">
+                    <img src="./assets/coin.gif" alt class="coinScore" />
                     <div class="score">0</div>
                 </div>
 
@@ -35,11 +33,11 @@
                         alt="Nuvens" /></div>
             </div>
 
-            <div class="tela">
-                <img src="./assets/titulo.png" class="titulo" alt="Título" />
+            <div class="screen">
+                <img src="./assets/titulo.png" class="title" alt="Título" />
                 <img
                     src="./assets/PIPES-27-07-2023 (2).png"
-                    class="subtitulo"
+                    class="subtitle"
                     alt="Subtítulo" />
                 <p id="space">
                     PRESS SPACEBAR <br />
@@ -49,8 +47,8 @@
                     COLLECT 5 COINS <br />
                     TO WIN!!!
                 </p>
-                <button class="botao" onclick="gameStart()">
-                    <img src="./assets/iniciar-28-07-2023.png" id="iniciar"
+                <button class="startButton" onclick="gameStart()">
+                    <img src="./assets/iniciar-28-07-2023.png" id="start"
                         alt />
                 </button>
             </div>
@@ -69,7 +67,7 @@
 
                 <button class="end2" onclick="window.location.reload()">
                     <img src="./assets/tela-Inicial-28-07-2023.png"
-                        id="reiniciar2" />
+                        id="restart2" />
                 </button>
             </div>
 
@@ -77,33 +75,33 @@
                 <img
                     src="./assets/Game-Over-27-07-2023.png"
                     class="gameoverimg"
-                    alt="Tela de Game Over" />
-                <div class="pontuacao">
+                    alt="Game Over screen" />
+                <div class="scoreboard">
                     <img
                         src="./assets/Score-27-07-2023.png"
-                        class="canosDerrotados"
-                        alt="Pontuação" />
+                        class="scorePng"
+                        alt="Final Score" />
 
                     <span id="finalScore" class="score">0</span>
                 </div>
                 <button class="end" onclick="window.location.reload()">
                     <img src="./assets/tela-Inicial-28-07-2023.png"
-                        id="reiniciar" />
+                        id="restart" />
                 </button>
             </div>
         </div>
 
         <audio
             src="./assets/Super Mario World Music - Athletic (320 kbps).mp3"
-            id="tema"></audio>
+            id="theme"></audio>
         <audio src="./assets/Fsound.mp3" id="gameover"></audio>
 
         <audio
             src="./assets/Super Mario World Music - Game Over (320 kbps).mp3"
             id="over"></audio>
-        <audio src="./assets/pulo.mp3" id="pulo"></audio>
+        <audio src="./assets/pulo.mp3" id="jumping"></audio>
 
-        <audio src="./assets/coinSound.mp3" id="somcoin"></audio>
+        <audio src="./assets/coinSound.mp3" id="coinSound"></audio>
         <audio src="./assets/FinalSound.mp3" id="party"></audio>
         <audio src="./assets/letsGo.mp3" id="lets"></audio>
         <audio src="./assets/its-me.mp3" id="mario-voice"></audio>

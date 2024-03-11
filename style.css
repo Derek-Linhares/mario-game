@@ -64,7 +64,7 @@ body {
   height: 20px;
 }
 
-.final.mostrar {
+.final.show {
   visibility: visible;
   opacity: 1;
 }
@@ -104,14 +104,14 @@ body {
   visibility: hidden;
 }
 
-#reiniciar2 {
+#restart2 {
   position: absolute;
   width: 250px;
   right: 330px;
   bottom: 30px;
 }
 
-#reiniciar2:hover {
+#restart2:hover {
   scale: 1.1;
   cursor: pointer;
 }
@@ -189,7 +189,7 @@ body {
   cursor: pointer;
 }
 
-.tela {
+.screen {
   margin-top: 50px;
   position: absolute;
   width: 900px;
@@ -206,7 +206,7 @@ body {
 }
 
 /* Estilos para o cenário */
-.cenario {
+.scene {
   width: 900px;
   height: 900px;
   margin-top: 50px;
@@ -225,7 +225,7 @@ body {
   left: -20px;
 }
 
-.canosDerrotados {
+.scorePng {
   width: 180px;
   height: 80px;
   margin-top: -2px;
@@ -264,7 +264,7 @@ body {
   }
 }
 
-.pontuacao {
+.scoreboard {
   margin-top: 10px;
   margin-right: 10px;
   display: flex;
@@ -289,7 +289,7 @@ body {
   margin-top: 20px;
 }
 
-.pipeScore {
+.coinScore {
   width: 30px;
   height: 30px;
   margin-top: 8px;
@@ -303,10 +303,7 @@ body {
   color: white;
 }
 
-.pontos {
-  width: 500px;
-  height: 100px;
-}
+
 
 /* Estilos para a animação de salto */
 .jump {
@@ -329,28 +326,21 @@ body {
 
 /* Estilos para a tela inicial */
 
-#mountains {
-  position: absolute;
-  width: 2310px;
-  height: 410px;
-  bottom: 120px;
-  background-image: url(./assets/bg-mountains\\(1\).png);
-  background-size: cover;
-}
 
-.titulo {
+
+.title {
   width: 500px;
   height: 200px;
 }
 
-.subtitulo {
+.subtitle {
   width: 400px;
   height: 80px;
   margin-bottom: 410px;
 }
 
 /* Estilos para o botão da tela inicial */
-.botao {
+.startButton {
   margin-top: 20px;
   color: azure;
   background-color: transparent;
@@ -363,7 +353,7 @@ body {
   animation: botaoanim 1s infinite linear;
 }
 
-#iniciar {
+#start {
   position: absolute;
   width: 300px;
   bottom: 0px;
@@ -374,11 +364,9 @@ body {
   width: 500px;
   height: 100px;
   margin-top: 100px;
-
   background-color: transparent;
   border: none;
   cursor: pointer;
-
   position: absolute;
   bottom: 150px;
   right: 210px;
@@ -386,7 +374,7 @@ body {
   animation: botaoanim2 3.1s linear 4s;
 }
 
-#reiniciar {
+#restart {
   width: 250px;
 }
 
@@ -560,10 +548,10 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
-  .pipeScore {
+  .coinScore {
     margin-top: 15px;
   }
-  .canosDerrotados {
+  .scorePng {
     margin-top: 8px;
   }
 }
@@ -580,10 +568,10 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
-  .pipeScore {
+  .coinScore {
     margin-top: 15px;
   }
-  .canosDerrotados {
+  .scorePng {
     margin-top: 8px;
   }
 }
@@ -600,10 +588,10 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
-  .pipeScore {
+  .coinScore {
     margin-top: 15px;
   }
-  .canosDerrotados {
+  .scorePng {
     margin-top: 8px;
   }
 }
@@ -620,10 +608,10 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
-  .pipeScore {
+  .coinScore {
     margin-top: 15px;
   }
-  .canosDerrotados {
+  .scorePng {
     margin-top: 8px;
   }
 }
@@ -640,10 +628,10 @@ body {
     height: 100%;
     width: 100%;
   }
-  .pipeScore {
+  .coinScore {
     margin-top: 10px;
   }
-  .canosDerrotados {
+  .scorePng {
     margin-top: 0;
   }
 }
@@ -660,10 +648,10 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
-  .pipeScore {
+  .coinScore {
     margin-top: 15px;
   }
-  .canosDerrotados {
+  .scorePng {
     margin-top: 4px;
   }
 
@@ -679,10 +667,10 @@ body {
     height: 99.9%;
     width: 99.9%;
   }
-  .pipeScore {
+  .coinScore {
     margin-top: 15px;
   }
-  .canosDerrotados {
+  .scorePng {
     margin-top: 8px;
   }
 }

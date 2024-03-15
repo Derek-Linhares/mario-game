@@ -476,7 +476,8 @@ body {
   width: 130px;
   height: 150px;
   bottom: 120px;
-  animation: pipe-animation 3.05s infinite linear;
+  right: -200px;
+  animation: plant-animation 3.05s infinite linear;
 }
 
 #coin {
@@ -490,7 +491,7 @@ body {
   animation: coin-animation 4s infinite linear;
 }
 
-@keyframes pipe-animation {
+@keyframes plant-animation {
   from {
     right: -200px;
   }
